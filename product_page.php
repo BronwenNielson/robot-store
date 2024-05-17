@@ -1,11 +1,11 @@
 <?php
 
-require_once('src/factories/pdo_factories.php');
-require_once('src/modals/product_modal.php');
-require_once('src/entities/single_product_entity.php');
+require_once('src/factories/PdoFactory.php');
+require_once('src/modals/ProductModal.php');
+require_once('src/entities/SingleProductEntity.php');
 
-$db = pdoFactory::connect();
-$products = productModal::setIndividualProduct($db);
+$db = PdoFactory::connect();
+$product = ProductModal::getIndividualProduct($db);
 
 ?>
 
@@ -23,9 +23,7 @@ $products = productModal::setIndividualProduct($db);
 <body>
 <div>
         <?php
-        foreach ($products as $product) {
-            echo $product->displayProducts();
-        }
+            echo $product->displayProduct();
         ?>
     </div>
 </body>

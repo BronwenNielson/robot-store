@@ -1,11 +1,11 @@
 <?php
 
-require_once('src/factories/pdo_factories.php');
-require_once('src/modals/product_modal.php');
-require_once('src/entities/product_entity.php');
+require_once('src/factories/PdoFactory.php');
+require_once('src/modals/ProductModal.php');
+require_once('src/entities/ProductEntity.php');
 
-$db = pdoFactory::connect();
-$products = productModal::setProducts($db);
+$db = PdoFactory::connect();
+$products = ProductModal::getProducts($db);
 
 ?>
 

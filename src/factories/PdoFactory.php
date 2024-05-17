@@ -1,6 +1,6 @@
 <?php
 
-class pdoFactory
+class PdoFactory
 {
     public static function connect()
     {
